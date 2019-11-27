@@ -14,9 +14,14 @@ public class Fenetre extends JFrame{
     }
 
     private void go(){
-        for(int i = -50; i < pan.getWidth(); i++){
+        int vitesseX = 1;
+        int vitesseY=1;
+        for(;;){
 
-            pan.setPosX(pan.getPosX() + 1);
+            if(pan.getPosX()>this.getWidth()-50 || pan.getPosX() < 0)vitesseX=vitesseX*-1;
+            if(pan.getPosY()>this.getHeight()-70 || pan.getPosY() < 0)vitesseY=vitesseY*-1;
+            pan.setPosX(pan.getPosX() + vitesseX);
+            pan.setPosY(pan.getPosY() + vitesseY);
             pan.repaint();
 
             try {

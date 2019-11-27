@@ -2,10 +2,15 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Panneau extends JPanel {
-    private int posX = -10;
-    private int posY = -10;
+    private int posX = 0;
+    private int posY = 0;
 
     public void paintComponent(Graphics g){
+        g.setColor(Color.white);
+        g.fillRect(-10,-10,this.getWidth()+10,this.getHeight()+10);
+
+
+
         g.setColor(Color.red);
         g.fillRect(posX, posY, 50, 50);
         g.setColor(Color.blue);
