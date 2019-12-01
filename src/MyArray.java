@@ -12,8 +12,19 @@ public class MyArray {
         }
     }
     public void next(){
+
         if(position==null)position=0;
-        else ++position;
+        else if (position<this.size()-1){
+            int temp = position;
+            for (int i = position; i >=0; i--) {
+                if(this.myList.get(i)>=this.myList.get(position)) {
+//                    System.out.println(this.myList.get(temp)+"<="+this.myList.get(i)+"<="+this.myList.get(position));
+                    temp=i;
+                }
+            }
+            this.shift(position,temp);
+        }
+        ++position;
     }
     public void shift(int cible, int position){
         if(cible!=position){
