@@ -15,14 +15,7 @@ public class MyArray {
 
         if(position==null)position=0;
         else if (position<this.size()-1){
-            int temp = position;
-            for (int i = position; i >=0; i--) {
-                if(this.myList.get(i)>=this.myList.get(position)) {
-//                    System.out.println(this.myList.get(temp)+"<="+this.myList.get(i)+"<="+this.myList.get(position));
-                    temp=i;
-                }
-            }
-            this.shift(position,temp);
+            trInsertion();
         }
         ++position;
     }
@@ -33,6 +26,16 @@ public class MyArray {
             this.myList.add(position, temp);
         }
 
+    }
+    public void trInsertion(){
+        int temp = position;
+        for (int i = position; i >=0; i--) {
+            if(this.myList.get(i)>=this.myList.get(position)) {
+//                    System.out.println(this.myList.get(temp)+"<="+this.myList.get(i)+"<="+this.myList.get(position));
+                temp=i;
+            }
+        }
+        this.shift(position,temp);
     }
     public Integer getPosition() {
         return position;
